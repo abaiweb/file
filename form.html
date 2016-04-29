@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>文件列表的扫描</title>
+<script type="text/javascript" src="./jquery-1.8.0.min.js"></script>
+</head>
+<body>
+
+<p>上传文件</p>
+<input name='filepath' value='' id='filepath'  size='50'/><a href='javascript:;' onclick='selectImage(this)'>浏览</a>
+<script type="text/javascript">
+function selectImage(e){
+	var xx = e.pageX || 0; 
+	var yy = e.pageY || 0; 
+	if(xx !=0 && yy !=0 ){
+		posLeft = xx-100;
+		posTop = yy;
+	}else{ var posLeft = 100; var posTop = 100; }
+	//if(!fname) fname = 'form1.picname';
+	//if(!stype) stype = '';
+	window.open("./select_images.php", "popUpImagesWin", "scrollbars=yes,resizable=yes,statebar=no,width=600,height=400,left="+posLeft+", top="+posTop);
+}
+</script>
+</body>
+</html>
